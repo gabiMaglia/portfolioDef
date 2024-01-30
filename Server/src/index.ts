@@ -1,16 +1,16 @@
 import express from 'express'
+import mainRouter from './routes/mainRoutes'
+const server = express()
 
-const app = express()
-
-app.use(express.json())
+server.use(express.json())
 
 const PORT = 3001
 
-app.get('/ping', (_req, res) => {
-    console.log('someone pinned')
-    res.send('pong')
-})
-
-app.listen(PORT, ()=> {
+server.use('/', mainRouter)
+// server.get('/ping', (_req, res) => {
+//     console.log('someone pinned')
+//     res.send('pong')
+// })
+server.listen(PORT, ()=> {
     console.log(`Server runing at ${PORT}`)
 })
