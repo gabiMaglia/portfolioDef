@@ -1,44 +1,36 @@
-import { Table, Model, Column, DataType } from 'sequelize-typescript';
+import {  DataTypes } from 'sequelize';
 
-@Table({
-  timestamps: false,
-  tableName: 'experience',
-})
-export class User extends Model {
-  @Column({
-    type: DataType.UUIDV4,
-    allowNull: false,
-  })
-  id!: string;
 
-  @Column({
-    type: DataType.STRING,
-    allowNull: false,
-  })
-  instagram!: string;
-
-  @Column({
-    type: DataType.STRING,
-    allowNull: false,
-  })
-  facebook!: string;
-
-  @Column({
-    type: DataType.STRING,
-    allowNull: false,
-  })
-  linkedin!: string;
-
-  @Column({
-    type: DataType.STRING,
-    allowNull: false,
-  })
-  github!: string;
-
-  @Column({
-    type: DataType.STRING,
-    allowNull: false,
-  })
-  gmail!: string;
-
+export default (sequelize : any) => {
+  sequelize.define (
+    'SocialMedia',
+    {
+      id: {
+        type: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDV4,
+        allowNull: false,
+        primaryKey: true,
+      },
+      instagram: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+      facebook: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+      linkedin: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+      github: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+      gmail: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      }
+    }
+  )
 }

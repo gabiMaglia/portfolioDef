@@ -1,26 +1,24 @@
-import { Table, Model, Column, DataType } from 'sequelize-typescript';
+import {  DataTypes } from 'sequelize';
 
-@Table({
-  timestamps: false,
-  tableName: 'userCredentials',
-})
-export class UserCredentials extends Model {
-  @Column({
-    type: DataType.UUIDV4,
-    allowNull: false,
-  })
-  id!: string;
 
-  @Column({
-    type: DataType.STRING,
-    allowNull: false,
-  })
-  email!: string;
-
-  @Column({
-    type: DataType.STRING,
-    allowNull: true,
-    defaultValue: '',
-  })
-  password!: boolean;
+export default (sequelize : any) => {
+  sequelize.define (
+    'UserCredentials',
+    {
+      id: {
+        type: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDV4,
+        allowNull: false,
+        primaryKey: true,
+      },
+      email: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+      password: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+      }
+    }
+  )
 }

@@ -1,15 +1,15 @@
 import { Router } from "express"
-import { getUserHandler } from "../handlers/userHandler"
+import { getUserHandler, getProyectsHandler, getExperienceHandler, getSkillsHandler, getSocialHandler, getStudiesHandler } from "../handlers/getHandlers"
 
 
 const getRouter = Router()
 
-getRouter.use('/persona', getUserHandler)
-getRouter.use('/proyect', getUserHandler)
-getRouter.use('/experience', getUserHandler)
-getRouter.use('/skill', getUserHandler)
-getRouter.use('/social', getUserHandler)
-getRouter.use('/studies', getUserHandler)
+getRouter.get('/persona', getUserHandler)
+getRouter.get('/proyects', getProyectsHandler)
+getRouter.get('/experience', getExperienceHandler)
+getRouter.get('/skill', getSkillsHandler)
+getRouter.get('/social', getSocialHandler)
+getRouter.get('/studies', getStudiesHandler)
 
 
 

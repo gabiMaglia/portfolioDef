@@ -1,11 +1,9 @@
-
-
 import {  DataTypes } from 'sequelize';
 
 
 export default (sequelize : any) => {
   sequelize.define (
-    'UserPhrases',
+    'Skills',
     {
       id: {
         type: DataTypes.UUID,
@@ -13,22 +11,22 @@ export default (sequelize : any) => {
         allowNull: false,
         primaryKey: true,
       },
-      main_phrase: {
+      type: {
         type: DataTypes.STRING,
         allowNull: true,
       },
-      phrase1: {
+      img_skill: {
         type: DataTypes.STRING,
         allowNull: true,
       },
-      phrase2: {
+      name: {
         type: DataTypes.STRING,
         allowNull: true,
       },
-      phrase3: {
-        type: DataTypes.STRING,
+      amount: {
+        type: DataTypes.INTEGER,
         allowNull: true,
-      }
+      },
     }
   )
 }

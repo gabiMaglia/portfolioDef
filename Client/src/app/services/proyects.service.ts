@@ -12,7 +12,7 @@ export class ProyectsService {
   constructor(private httpClient: HttpClient) {}
 
   public getProyects(): Observable<Proyects[]> {
-    return this.httpClient.get<Proyects[]>(`${this.URL}/get/proyect`);
+    return this.httpClient.get<Proyects[]>(`${this.URL}/get/proyects`);
   }
 
   public addProyect(proyect: Proyects): Observable<Proyects> {

@@ -13,9 +13,7 @@ export default class Studies {
 
   img_st: string;
 
-  persona_id: number;
 
-  persona_DNI_persona: number;
 
   
   constructor(
@@ -26,8 +24,7 @@ export default class Studies {
     endDate_st: string,
     description_st: string,
     img_st: string,
-    persona_id: number,
-    persona_DNI_persona: number
+ 
   ) {
     this.id = id;
     this.title_st = title_st;
@@ -36,7 +33,6 @@ export default class Studies {
     this.endDate_st = endDate_st;
     this.description_st = description_st;
     this.img_st = img_st;
-    this.persona_id = persona_id;
-    this.persona_DNI_persona = persona_DNI_persona;
+   
   }
 }

@@ -1,11 +1,9 @@
-
-
 import {  DataTypes } from 'sequelize';
 
 
 export default (sequelize : any) => {
   sequelize.define (
-    'UserPhrases',
+    'Proyect',
     {
       id: {
         type: DataTypes.UUID,
@@ -13,19 +11,35 @@ export default (sequelize : any) => {
         allowNull: false,
         primaryKey: true,
       },
-      main_phrase: {
+      title_pro: {
         type: DataTypes.STRING,
         allowNull: true,
       },
-      phrase1: {
+      technologies_pro: {
         type: DataTypes.STRING,
         allowNull: true,
       },
-      phrase2: {
+      description_pro: {
         type: DataTypes.STRING,
         allowNull: true,
       },
-      phrase3: {
+      deployLink_pro: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+      githubLink_pro: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+      img1_pro: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+      img2_pro: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+      img3_pro: {
         type: DataTypes.STRING,
         allowNull: true,
       }

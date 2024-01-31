@@ -1,5 +1,5 @@
 export default class Proyects {
-   id: number;
+   id: string;
 
      title_pro: string;
 

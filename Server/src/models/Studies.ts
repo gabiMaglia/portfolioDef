@@ -1,49 +1,40 @@
-import { Table, Model, Column, DataType } from 'sequelize-typescript';
+import {  DataTypes } from 'sequelize';
 
-@Table({
-  timestamps: false,
-  tableName: 'experience',
-})
-export class User extends Model {
-  @Column({
-    type: DataType.UUIDV4,
-    allowNull: false,
-  })
-  id!: string;
 
-  @Column({
-    type: DataType.STRING,
-    allowNull: false,
-  })
-  title_st!: string;
-
-  @Column({
-    type: DataType.STRING,
-    allowNull: false,
-  })
-  institution_st!: string;
-
-  @Column({
-    type: DataType.STRING,
-    allowNull: false,
-  })
-  startDate_st!: string;
-
-  @Column({
-    type: DataType.STRING,
-    allowNull: false,
-  })
-  endDate_st!: string;
-
-  @Column({
-    type: DataType.STRING,
-    allowNull: false,
-  })
-  description_st!: string;
-
-  @Column({
-    type: DataType.STRING,
-    allowNull: false,
-  })
-  img_st!: string;
+export default (sequelize : any) => {
+  sequelize.define (
+    'Studies',
+    {
+      id: {
+        type: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDV4,
+        allowNull: false,
+        primaryKey: true,
+      },
+      title_st: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+      institution_st: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+      startDate_st: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+      endDate_st: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+      description_st: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+      img_st: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      }
+    }
+  )
 }
