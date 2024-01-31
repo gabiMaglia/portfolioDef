@@ -21,7 +21,7 @@ export default class Proyects {
   
 
   constructor(
-    id: number, 
+    id: string, 
     title_pro: string, 
     technologies_pro: string, 
     description_pro: string, 

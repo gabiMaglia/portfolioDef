@@ -27,6 +27,9 @@ export default (sequelize : any) => {
         type: DataTypes.INTEGER,
         allowNull: true,
       },
+    },
+    {
+      timestamps: false,
     }
   )
 }

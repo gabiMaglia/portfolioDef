@@ -1,28 +1,53 @@
-export interface User {
+export interface UserInterface {
     id?: String;
-    
+
     name_persona: String;
-    
+
     surname_persona: String;
-    
+
     dni_persona: String;
-    
+
     telephone_persona: String;
-    
+
     photo_url: String;
-    
+
     main_phrase: String;
-    
+
     phrase1: String;
-    
+
     phrase2: String;
-    
+
     phrase3: String;
-    
+
+    email: String
+
+    password: String
+
 }
-export interface Experience {
-    id?: String;
+export interface ProyectInterface {
+    id?: string;
+
+    title_pro: string;
+
+    technologies_pro: string;
+
+    description_pro: string;
+
+    deployLink_pro: string;
+
+    githubLink_pro: string;
+
+    img1_pro: string;
+
+    img2_pro: string;
     
+    img3_pro: string;
+}
+export interface ExperienceInterface {
+    id?: String;
+
+    title_exp: String;
+
     institution_exp: String;
 
     startDate_exp: String;
@@ -33,11 +58,8 @@ export interface Experience {
 
     img_exp: String;
 
-    persona_id: Number;
-
-    persona_DNI_persona: Number;
 }
-export interface Studies {
+export interface StudiesInterface {
     id?: String;
 
     title_st: String;
@@ -51,19 +73,15 @@ export interface Studies {
     description_st: String;
 
     img_st: String;
-
-    persona_id: Number;
-
-    persona_DNI_persona: Number;
 }
-export interface UserCredentials {
+export interface UserCredentialsInterface {
     id?: String
 
     email: String
 
     password: String
 }
-export interface UserPhrases {
+export interface UserPhrasesInterface {
     id: String;
 
     main_phrase: String;
@@ -74,7 +92,7 @@ export interface UserPhrases {
 
     phrase3: String;
 }
-export interface Skills {
+export interface SkillsInterface {
     id?: String;
 
     type: String;
@@ -86,7 +104,7 @@ export interface Skills {
     amount: Number;
 
 }
-export interface Social {
+export interface SocialInterface {
     id?: String;
 
     instagram: String;
@@ -98,9 +116,9 @@ export interface Social {
     github: String;
 
     gmail: String;
-} 
+}
 
-export interface DbResponse<T = any> {
+export interface DbResponseInterface<T = any> {
     error: boolean
 
     response: T

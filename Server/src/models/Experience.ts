@@ -1,10 +1,7 @@
+import { DataTypes } from 'sequelize';
 
-
-import {  DataTypes } from 'sequelize';
-
-
-export default (sequelize : any) => {
-  sequelize.define (
+export default (sequelize: any) => {
+  sequelize.define(
     'Experience',
     {
       id: {
@@ -37,6 +34,9 @@ export default (sequelize : any) => {
         type: DataTypes.STRING,
         allowNull: true,
       }
+    },
+    {
+      timestamps: false,
     }
   )
 }

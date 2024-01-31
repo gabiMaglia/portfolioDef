@@ -16,9 +16,12 @@ export default (sequelize : any) => {
         allowNull: true,
       },
       password: {
-        type: DataTypes.BOOLEAN,
+        type: DataTypes.STRING,
         allowNull: false,
       }
+    },
+    {
+      timestamps: false,
     }
   )
 }

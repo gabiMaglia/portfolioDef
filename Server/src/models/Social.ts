@@ -31,6 +31,9 @@ export default (sequelize : any) => {
         type: DataTypes.STRING,
         allowNull: true,
       }
+    },
+    {
+      timestamps: false,
     }
   )
 }

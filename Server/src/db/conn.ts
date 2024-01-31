@@ -31,51 +31,51 @@ StudiesModel(sequelize)
 SkillModel(sequelize)
 SocialModel(sequelize)
 
-// const {
-//   User,
-//   UserCredentials,
-//   UserPhrases,
-//   Proyect,
-//   Experience,
-//   Studies,
-//   Skills,
-//   SocialMedia
-// } = sequelize.models
+const {
+  User,
+  UserPhrases,
+  UserCredentials,
+  Proyect,
+  Experience,
+  Studies,
+  Skills,
+  SocialMedia
+} = sequelize.models
 
-// User.hasOne(UserCredentials, {
-//   onDelete: "CASCADE",
-// });
-// UserCredentials.belongsTo(User);
+User.hasOne(UserCredentials, {
+  onDelete: "CASCADE",
+});
+UserCredentials.belongsTo(User);
 
-// User.hasOne(UserPhrases, {
-//   onDelete: "CASCADE",
-// });
-// UserPhrases.belongsTo(User);
+User.hasOne(UserPhrases, {
+  onDelete: "CASCADE",
+});
+UserPhrases.belongsTo(User);
 
-// User.hasMany(Experience, {
-//   onDelete: "CASCADE",
-// });
-// Experience.belongsTo(User);
+User.hasMany(Experience, {
+  onDelete: "CASCADE",
+});
+Experience.belongsTo(User);
 
-// User.hasMany(Proyect, {
-//   onDelete: "CASCADE",
-// });
-// Proyect.belongsTo(User);
+User.hasMany(Proyect, {
+  onDelete: "CASCADE",
+});
+Proyect.belongsTo(User);
 
-// User.hasMany(Studies, {
-//   onDelete: "CASCADE",
-// });
-// Studies.belongsTo(User);
+User.hasMany(Studies, {
+  onDelete: "CASCADE",
+});
+Studies.belongsTo(User);
 
-// User.hasMany(Skills, {
-//   onDelete: "CASCADE",
-// });
-// Skills.belongsTo(User);
+User.hasMany(Skills, {
+  onDelete: "CASCADE",
+});
+Skills.belongsTo(User);
 
-// User.hasOne(SocialMedia, {
-//   onDelete: "CASCADE",
-// });
-// SocialMedia.belongsTo(User);
+User.hasMany(SocialMedia, {
+  onDelete: "CASCADE",
+});
+SocialMedia.belongsTo(User);
 
 
 export default sequelize;

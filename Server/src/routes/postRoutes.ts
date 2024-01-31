@@ -12,7 +12,7 @@ import {
 const postRouter = Router();
 
 postRouter.post("/persona", postUserHandler);
-postRouter.post("/proyects", postProyectsHandler);
+postRouter.post("/proyect", postProyectsHandler);
 postRouter.post("/experience", postExperienceHandler);
 postRouter.post("/skill", postSkillsHandler);
 postRouter.post("/social", postSocialHandler);

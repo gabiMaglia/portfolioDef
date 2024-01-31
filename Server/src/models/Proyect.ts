@@ -1,6 +1,5 @@
 import {  DataTypes } from 'sequelize';
 
-
 export default (sequelize : any) => {
   sequelize.define (
     'Proyect',
@@ -43,6 +42,9 @@ export default (sequelize : any) => {
         type: DataTypes.STRING,
         allowNull: true,
       }
+    }, 
+    {
+      timestamps: false,
     }
   )
 }
