@@ -1,7 +1,7 @@
 #about-container {
     margin: 0;
-    font-family: "Montserrat", sans-serif;
-   
+    font-family: "Lato", sans-serif;
+    user-select: none
   }
 
   .white-column{
@@ -9,12 +9,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: 900;
+    font-weight: 600;
+
   }
   .title{
     display: block;
+    font-size: 32px;
   }
-
   #about-container .white-column {
     display: flex;
     flex-direction: column;
@@ -63,15 +64,19 @@
   .personalData {
     margin-top: -5rem;
     text-align: end;
-    font-size: 12px;
+    
   }
   .personalData h2 {
-    color: white;
-    font-size: 32px;
-  }
-  .personalData h1{
+    font-weight: 400;
+    font-family: "Lato", sans-serif;
     color: white;
     font-size: 24px;
+  }
+  .personalData p{
+    font-weight: 300;
+    font-family: "Lato", sans-serif;
+    color: white;
+    font-size: 17px;
   }
   .lDescription {
     padding: .6rem;
@@ -84,6 +89,7 @@
   
   #skills-container{
     margin: 0;
+    user-select: none
   }
   
   #skills-container .black-column{
@@ -159,9 +165,20 @@
   
   
   @media (min-width: 991px) {
-
+    .title{
+   
+      font-size: 38px;
+    }
     #about-container .white-column{
         min-height: 80%;
+    }
+    .personalData h2 {
+
+      font-size: 28px;
+    }
+    .personalData p{
+ 
+      font-size: 21px;
     }
     #skills-container .white-column{
       display: flex;

@@ -3,7 +3,7 @@
   <div class="row"  id="about-container">
     <!-- White column -->
     <div class="col-lg-6 m-0 p-0 white-column" [ngClass]="{'data-aos = fade-right': !isMobile}" >
-      <p class="hover-underline-animation-dark title">About</p>
+      <h2 class="title">Hello world! <br> I am a Full Stack Developer</h2>
     
      
     </div>
@@ -29,8 +29,8 @@
       </div>
       <div id="description">
       <div class="personalData">
-        <h2 class="title">Gabriel Maglia</h2>
-        <h1 class="title">Full Stack Developer</h1>
+        <h4 class="title">I'm {{this.persona.name_persona}} {{this.persona.surname_persona}}  </h4>
+        <p class="title">a 36-year-old enthusiast of music and technology</p>
       </div>
     
       <!-- PHRASES -->
