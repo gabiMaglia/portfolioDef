@@ -96,9 +96,9 @@ export class FooterComponent implements OnInit {
   }
 
   sendMail(contactForm: FormGroup) {
-      this.sending = true
+    this.sending = true
     this.mailService.sendMail(this.contactFormMailer.value).subscribe({
-      
+
       next: (response: Email) => {
         this.sending = false
         this.succesAlert('Your email has been sent');

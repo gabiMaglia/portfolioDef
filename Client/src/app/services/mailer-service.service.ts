@@ -12,6 +12,6 @@ export class MailerServiceService {
   constructor(private httpClient: HttpClient) {}
 
   public sendMail(email: Email): Observable<Email> {
-    return this.httpClient.post<Email>(`${this.URL}/send_email/`, email);
+    return this.httpClient.post<Email>(`${this.URL}/send_email`, email);
   }
 }
