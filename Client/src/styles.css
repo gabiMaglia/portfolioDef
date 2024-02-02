@@ -55,7 +55,7 @@ h1,h2,h3 {
   font-family: 'Teko', sans-serif;
   
 }
-h4, p, i, a, figcaption, button {
+h4, p, i, a, figcaption, button{
   font-family: "Lato", sans-serif;
 }
 .nav-pills > li > a.active {

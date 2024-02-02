@@ -3,7 +3,11 @@
     font-family: "Lato", sans-serif;
     user-select: none
   }
-
+  .contactIcon{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   .white-column{
     background-color: white;
     display: flex;
@@ -20,6 +24,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
     background-color: var(--white);
     color: black;
     min-height: 16rem;
@@ -32,6 +37,8 @@
     display: flex;
     flex-direction: column;
   }
+    
+    
   
   #profile-pic{
     object-fit: cover;
@@ -59,14 +66,12 @@
     position: relative;
     margin-top: -3rem!important;
     margin-inline: 1rem;
-    
   }
   .personalData {
     margin-top: -5rem;
-    text-align: end;
-    
+    text-align: center; 
   }
-  .personalData h2 {
+  .personalData h4 {
     font-weight: 400;
     font-family: "Lato", sans-serif;
     color: white;
@@ -81,6 +86,7 @@
   .lDescription {
     padding: .6rem;
     margin-top: 2rem;
+    font-size: 12px;
   }
   .lDescription i {
     display: block;
@@ -101,13 +107,13 @@
     background-color: white;
     display: none;
     
-
+    
     
   }
   
   #skills-container .cont {
     border: 1px solid black;
-    margin: 1rem;
+    margin: .5rem;
     border-radius: var(--borderRadius);
   }
   
@@ -120,6 +126,11 @@
     
   }
   
+  .hex,.img-lang {
+    transform: scale(0.8);
+
+  }
+
   .hex-icon {
     display: flex;
     flex-direction: column;
@@ -135,8 +146,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 70px;
-    height: 70px;
+    width: 85px;
+    height: 85px;
     clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
     background-color: black;
     
@@ -166,19 +177,26 @@
   
   @media (min-width: 991px) {
     .title{
-   
       font-size: 38px;
     }
     #about-container .white-column{
         min-height: 80%;
+        text-align: left;
     }
-    .personalData h2 {
-
+    .personalData{
+      text-align: right;
+    }
+    .personalData h4 {
       font-size: 28px;
     }
+  
     .personalData p{
- 
-      font-size: 21px;
+        font-size: 21px;
+    }
+    .lDescription {
+      padding: .6rem;
+      margin-top: 2rem;
+      font-size: 16px;
     }
     #skills-container .white-column{
       display: flex;
