@@ -80,7 +80,7 @@ export class AboutMeComponent implements OnInit {
   // Persona Crud
   public getPersona(): void {
     this.personaService.getPersona().subscribe((data) => {
-      this.persona = data[0];
+      this.persona = data;
 
       this.phraseArrayMaker(this.persona);
     });

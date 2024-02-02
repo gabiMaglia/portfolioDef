@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import Persona from 'src/app/model/persona.model';
-
 import { PersonaService } from 'src/app/services/persona.service';
 
 @Component({
@@ -19,8 +17,7 @@ export class FrontPageComponent implements OnInit {
 
   public getPhrase(): void {
     this.personaService.getPersona().subscribe((data) => {
-      this.catchPhrase = data[0].main_phrase;
-
+      this.catchPhrase = data.main_phrase;
     });
   }
 }

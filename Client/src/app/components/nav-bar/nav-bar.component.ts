@@ -64,11 +64,11 @@ export class NavBarComponent implements OnInit {
 
   public getPersona(): void {
     this.personaService.getPersona().subscribe((data) => {
-      this.persona = data[0];
-      sessionStorage.setItem('currentUserId', JSON.stringify(data[0].id));
+      this.persona = data;
+      sessionStorage.setItem('currentUserId', JSON.stringify(data.id));
       sessionStorage.setItem(
         'currentUserDNI',
-        JSON.stringify(data[0].dni_persona)
+        JSON.stringify(data.dni_persona)
       );
     });
   }

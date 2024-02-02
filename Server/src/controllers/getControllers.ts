@@ -4,12 +4,11 @@ import { DbResponseInterface } from '../interfaces/user.interfaces'
 const { User, UserPhrases, Proyect, Experience, Skills, SocialMedia, Studies } = sequelize.models
 
 export const getPersona = async ():Promise<DbResponseInterface> => {
+
     const persona:any = await User.findOne({include: UserPhrases})
-    
     if (persona?.length === 0) return {error:true, response : "No existe ningun usuario"};
-   
-     else return { error: false, response: persona};
-    
+    else return { error: false, response: persona};
+
 }
 export const getProyects = async ():Promise<DbResponseInterface> => {
     

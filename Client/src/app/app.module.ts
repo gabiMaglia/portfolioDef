@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
-import { FrontPageComponent } from './components/front-page/front-page.component';
+// import { FrontPageComponent } from './components/front-page/front-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -29,7 +29,7 @@ import { ResumeComponent } from './components/common/resume/resume.component';
   declarations: [
     AppComponent,
     NavBarComponent,
-    FrontPageComponent,
+    // FrontPageComponent,
     AboutMeComponent,
     SeparatorComponent,
     StudiesComponent,

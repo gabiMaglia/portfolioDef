@@ -1,7 +1,7 @@
 #about-container {
-  
     margin: 0;
     font-family: "Montserrat", sans-serif;
+   
   }
 
   .white-column{
@@ -11,14 +11,21 @@
     align-items: center;
     font-weight: 900;
   }
+  .title{
+    display: block;
+  }
 
   #about-container .white-column {
-    min-height: 14rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: var(--white);
-      color: black;
+    color: black;
+    min-height: 16rem;
 
   }
   #about-container .black-column {
+    height: 21.5rem;
     background-color: var(--boostrapGrey);
     color: white;
     display: flex;
@@ -26,12 +33,17 @@
   }
   
   #profile-pic{
-    min-height: 20rem;
-    max-height: 43rem;
+    object-fit: cover;
+    padding-bottom: 9rem;
+    margin-top: -1rem;
     width: 100%;
+    height: 15.5rem;
+    object-position: center 1rem;
+    overflow: hidden;
   }
   
   .photo{
+    transform: scaleX(-1); 
     position: relative;
     display: flex;
     align-items: flex-end;  
@@ -43,12 +55,32 @@
     grid-template-rows: 1fr;
     justify-content: center;
     text-align: center;
-    margin: 1rem;
     position: relative;
+    margin-top: -3rem!important;
+    margin-inline: 1rem;
+    
   }
-  .lDescription p{
-    margin-bottom: 0;
+  .personalData {
+    margin-top: -5rem;
+    text-align: end;
+    font-size: 12px;
   }
+  .personalData h2 {
+    color: white;
+    font-size: 32px;
+  }
+  .personalData h1{
+    color: white;
+    font-size: 24px;
+  }
+  .lDescription {
+    padding: .6rem;
+    margin-top: 2rem;
+  }
+  .lDescription i {
+    display: block;
+  }
+
   
   #skills-container{
     margin: 0;
@@ -149,16 +181,17 @@
       text-align: right;
       margin: 1rem;
       position: relative;
+      padding-top: 1rem;
+      margin-top: 1rem;
+      
+    }
+    .lDescription {
+      padding-top: .1rem;
     }
     .editPannelImg{
       position: absolute;
     }
-    #about-container .white-column {
-      min-height: 14rem;
-      
-    
-  
-    }
+
   }
 
 

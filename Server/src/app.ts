@@ -1,8 +1,10 @@
 import express from 'express'
 import mainRouter from './routes/mainRoutes'
+import cors from 'cors'
 import morgan from 'morgan'
 
 const server = express()
+server.use(cors())
 server.use (morgan(':method :url :status :res[content-length] - :response-time ms'))
 // const morgan = require('morgan')
 server.use(express.json())

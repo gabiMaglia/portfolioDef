@@ -1,7 +1,15 @@
 .navbar {
  max-height: var(navBarHeight); 
+ min-height: 6rem;
 }
 
+.banner{
+font-size: 32px!important;
+}
+.nav-link{
+  font-weight: 700;
+  margin-bottom: -5px;
+}
 .editBtn {
   top: 4.8rem;
   left: 1rem;
@@ -9,19 +17,16 @@
   border-radius: 6px;
   position: absolute;
 }
-
 a {
   outline: none;
 }
 #nav-bar{
   animation: 1.5s ease-out slidein;
 }
-
 @keyframes slidein {
   0% { top: -120px;  }
   100% { top: 0px; }
 }
-
 @media (max-width: 991px) {
   #navBarMenu {
     text-align: center;

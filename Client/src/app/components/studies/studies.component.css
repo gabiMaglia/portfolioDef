@@ -1,8 +1,10 @@
 #container {
-    position: relative;
-    min-height: 60rem;
-    width: 100%;
-    overflow-x: hidden;
+  position: relative;
+  min-height: 60rem;
+  width: 100%;
+  overflow-x: hidden;
+  
+  background-color: var(--white);
   }
   #studies {
     margin: auto;

@@ -91,7 +91,7 @@ export class FooterComponent implements OnInit {
 
   getPersona() {
     this.getPersonaService.getPersona().subscribe((data) => {
-      this.persona = data[0];
+      this.persona = data;
     });
   }
 

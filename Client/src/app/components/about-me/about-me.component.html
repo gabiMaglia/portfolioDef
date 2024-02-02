@@ -1,9 +1,11 @@
 <section class="container-fluid m-0 p-0 g-0 section-container" id="about-me">
-  <!-- //About Container -->
-  <div class="row" id="about-container">
+  <!--About Container -->
+  <div class="row"  id="about-container">
     <!-- White column -->
     <div class="col-lg-6 m-0 p-0 white-column" [ngClass]="{'data-aos = fade-right': !isMobile}" >
-      <h2 class="hover-underline-animation-dark title">About</h2>
+      <p class="hover-underline-animation-dark title">About</p>
+    
+     
     </div>
     <!-- Black column -->
     <div class="col-lg-6 m-0 p-0 black-column" [ngClass]="{'data-aos = fade-left': !isMobile}">
@@ -25,13 +27,17 @@
           alt="Gabriel Alejandro Maglia"
         />
       </div>
-
-      <!-- PHRASES -->
       <div id="description">
+      <div class="personalData">
+        <h2 class="title">Gabriel Maglia</h2>
+        <h1 class="title">Full Stack Developer</h1>
+      </div>
+    
+      <!-- PHRASES -->
         <div class="lDescription">
-          <p *ngFor="let phrases of phraseArr; trackBy: trackByMethod">
-            {{ phrases }}
-          </p>
+          <i *ngFor="let phrases of phraseArr; trackBy: trackByMethod">
+            {{ phrases }}d
+          </i>
         </div>
         <!-- Edit Pannel -->
         <div *ngIf="isLog" class="editPannelImg">
@@ -86,11 +92,11 @@
           <figure *ngFor="let skill of hardSkills; trackBy: trackByMethod">
             <img class="img-lang" [src]="skill.img_skill" alt="HTML" />
             <figcaption>{{ skill.name }}</figcaption>
-            <mat-progress-bar
+            <!-- <mat-progress-bar
               class="mt-2"
               mode="determinate"
               value="{{ skill.amount }}"
-            ></mat-progress-bar>
+            ></mat-progress-bar> -->
             <div *ngIf="isLog" class="editPannel">
               <button
                 (click)="modalEditSkill.openModal(onPatchValueSkill(skill))"
@@ -122,9 +128,10 @@
     </div>
     <!-- White column -->
     <div class="col-lg-6 m-0 p-0 white-column">
-      <h2 class="hover-underline-animation-dark title">Soft And Hard Skills</h2>
+      <h2 class="hover-underline-animation-dark title">Skills</h2>
     </div>
   </div>
+      <app-separator></app-separator>
 </section>
 
 <!-- //Modals -->

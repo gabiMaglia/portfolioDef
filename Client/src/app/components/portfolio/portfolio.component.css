@@ -61,7 +61,8 @@ a {
    margin-inline: auto;
    width: min(0, 90%);
    min-height: 6rem;
-
+   display: grid;
+   align-content: center;
    flex: 1 1 auto;
    color: var(--white);
    font-size: 1.125rem;

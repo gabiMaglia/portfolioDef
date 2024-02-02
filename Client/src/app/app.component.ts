@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { from } from 'rxjs';
 import * as AOS from 'aos'
 
 @Component({
