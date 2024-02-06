@@ -20,8 +20,8 @@ export class HomeComponent implements OnInit {
 
   setTitlePage(){
     this.getPersona.getPersona().subscribe((data) => {
-      
       this.titleService.setTitle(data.name_persona.toString()+data.surname_persona.toString() + " portfolio");
     });
   }
+      
 }

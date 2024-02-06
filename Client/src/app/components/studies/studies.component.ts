@@ -60,6 +60,14 @@ export class StudiesComponent implements OnInit {
 
   unfold(): void {
     this.hide = !!!this.hide;
+    const container = document.getElementById('stu_container');
+    if (container) {
+      if (this.hide) {
+        container.classList.add('overflowScroll');
+      } else {
+        container.classList.remove('overflowScroll');
+      }
+    }
   }
   // Crud methods
   public getStudies(): void {

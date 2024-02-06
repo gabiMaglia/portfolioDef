@@ -1,8 +1,13 @@
-#container {
+#exp_container {
   position: relative;
-  min-height: 60rem;
+  max-height: 40rem;
+  min-height: 40rem;
   width: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
+  background-color: var(--white);
+}
+.overflowScroll {
+  overflow-y: scroll !important;
 }
 app-edit-pannel {
   display: flex;
@@ -14,12 +19,20 @@ app-edit-pannel {
   padding-bottom: 120px;
   overflow: scroll;
 }
+.experienceBoard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 1rem;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
 .exp-cont {
-  user-select: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   border-radius: var(--borderRadius);
   box-shadow: 0 10px 30px -15px var(--shadow);
-  margin-top: 100px;
-  margin-bottom: 100px;
   background-color: var(--boostrapGrey);
   color: var(--white);
 }
@@ -27,22 +40,19 @@ app-edit-pannel {
   width: min(object-fit, 100%);
   display: flex;
   justify-content: center;
+  margin-bottom: 1.5rem;
 }
-
 .img-thumbnail {
   min-width: 150px;
   border: none;
 }
-
 .data-cont {
-  text-align: left;
+  text-align: center;
 }
-
 .description {
   width: 100%;
   border-radius: var(--borderRadius);
 }
-
 .portada {
   z-index: 1;
   position: absolute;
@@ -51,41 +61,23 @@ app-edit-pannel {
   text-align: center;
   display: flex;
   align-items: center;
-  background-color: var(--white);
+  background-color: var(--boostrapGrey);
   transition: ease-in-out all 2s;
 }
 .experienceBoard {
   text-align: center;
 }
-
 .hide {
-  margin-left: -30000px;
+  margin-left: 30000px;
 }
-
 .title {
-  color: var(--boostrapBlack);
+  color: var(--white);
 }
-
 #addBtn {
   margin-bottom: 5rem;
   width: 10rem;
 }
-
-@media (max-width: 1030px) {
-  .editPannel {
-    display: flex;
-    justify-content: center;
-  }
-  .exp-cont {
-    display: flex;
-    flex-direction: column;
-
-    align-items: center;
-  }
-  .data-cont {
-    text-align: center;
-  }
-  .img-job-cont {
-    margin-bottom: 1.5rem;
-  }
+.editPannel {
+  display: flex;
+  justify-content: center;
 }

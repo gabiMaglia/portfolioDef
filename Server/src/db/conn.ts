@@ -46,7 +46,6 @@ const {
   Skills,
   SocialMedia
 } = sequelize.models
-
 User.hasOne(UserCredentials, {
   onDelete: "CASCADE",
 });

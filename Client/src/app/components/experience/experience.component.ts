@@ -32,6 +32,14 @@ export class ExperienceComponent implements OnInit {
 
   unfold(): void {
     this.hide = !!!this.hide;
+    const container = document.getElementById('exp_container');
+    if (container) {
+      if (this.hide) {
+        container.classList.add('overflowScroll');
+      } else {
+        container.classList.remove('overflowScroll');
+      }
+    }
   }
 
   ngOnInit(): void {

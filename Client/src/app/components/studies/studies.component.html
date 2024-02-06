@@ -6,7 +6,7 @@
     </div>
   </div>
   <!-- Studies Container -->
-  <div id="container" class="container-xxl">
+  <div id="stu_container" class="container-xxl">
     <!-- PortadaSlide -->
     <div
       *ngIf="!isLog"
@@ -30,22 +30,21 @@
         *ngFor="let studie of studies; trackBy: trackByMethod"
         class="row mx-1 py-3 d-flex flex-wraprounded-top rounded-bottom bg-none border studies-cont"
       >
-        <div class="col-2 img-job-cont">
-          <img
-            loading="lazy"
-            class="img-thumbnail"
-            [src]="studie.img_st || defaultImgValue"
-            alt="UtnBa"
-          />
-        </div>
-
-        <div class="col-10 d-flex flex-column justify-content-center data-cont">
-          <h6 id="ID" style="display: none">{{ studie.id }}</h6>
-          <h4>{{ studie.institution_st }}</h4>
-          <h5>{{ studie.title_st }}</h5>
-          <p class="description">{{ studie.description_st }}</p>
-          <h6>{{ studie.startDate_st }} to {{ studie.endDate_st }}</h6>
-        </div>
+      
+      <div class="col-10 d-flex flex-column justify-content-center data-cont">
+        <h3>{{ studie.institution_st }}</h3>
+        <h4>{{ studie.title_st }}</h4>
+        <i class="mb-1">{{ studie.startDate_st }} to {{ studie.endDate_st }}</i>
+        <p class="description">{{ studie.description_st }}</p>
+      </div>
+      <div class="col-2 img-job-cont">
+        <img
+          loading="lazy"
+          class="img-thumbnail"
+          [src]="studie.img_st || defaultImgValue"
+          alt="UtnBa"
+        />
+      </div>
         <div *ngIf="isLog" class="editPannel">
           <button
             (click)="modalEdit.openModal(this.onPatchValue(studie))"

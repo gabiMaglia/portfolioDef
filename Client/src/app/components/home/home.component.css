@@ -1,0 +1,16 @@
+#expStu {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.box {
+  flex: 1;
+}
+
+@media (min-width: 991px) {
+  #expStu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
