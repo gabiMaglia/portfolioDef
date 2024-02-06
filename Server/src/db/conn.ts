@@ -18,8 +18,13 @@ const sequelize = new Sequelize(
   LOCAL_DB || 'postgres://postgres:H4nS3l@localhost/portfolio_db',
   {
     dialect: "postgres",
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false
+      },
+    },
     logging: false,
-
   });
 
 UserModel(sequelize)
