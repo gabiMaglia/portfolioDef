@@ -1,11 +1,9 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import Persona from 'src/app/model/persona.model';
-import SocialM from 'src/app/model/socialM.model';
 import { AuthService } from 'src/app/services/auth-service.service';
 import { PersonaService } from 'src/app/services/persona.service';
-import { SocialService } from 'src/app/services/social.service';
 
 import Swal from 'sweetalert2';
 
@@ -15,8 +13,8 @@ import Swal from 'sweetalert2';
   styleUrls: ['./nav-bar.component.css'],
 })
 export class NavBarComponent implements OnInit {
-  persona: Persona = new Persona(0, '', '', '', '', '', '', '', '', '');
-  socialM: SocialM = new SocialM(0, '', '', '', '', '');
+  @Input() persona: any
+  @Input() socialM: any
   contactFormPersona!: FormGroup;
   contactFormCredentials!: FormGroup;
   isLog = this.authService.islog();
@@ -24,17 +22,11 @@ export class NavBarComponent implements OnInit {
   constructor(
     private personaService: PersonaService,
     private authService: AuthService,
-    private socialMService: SocialService,
     private readonly fb: FormBuilder
   ) {}
 
   ngOnInit(): void {
-    this.getPersona();
     this.contactFormPersona = this.initFormPersona();
-
-    this.socialMService.getSocialM().subscribe((data) => {
-      this.socialM = data[0];
-    });
   }
 
   succesAlert(message: String) {

@@ -35,7 +35,6 @@ import { ResumeComponent } from './components/common/resume/resume.component';
     StudiesComponent,
     ExperienceComponent,
     FooterComponent,
-
     PortfolioComponent,
     LoginComponent,
     HomeComponent,

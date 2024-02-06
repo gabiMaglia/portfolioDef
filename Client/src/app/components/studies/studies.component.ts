@@ -61,12 +61,17 @@ export class StudiesComponent implements OnInit {
   unfold(): void {
     this.hide = !!!this.hide;
     const container = document.getElementById('stu_container');
+    const stucontainer = document.getElementById('stu_cont');
+
     if (container) {
       if (this.hide) {
         container.classList.add('overflowScroll');
+        stucontainer?.classList.remove('displayNone');
       } else {
         container.classList.remove('overflowScroll');
+        stucontainer?.classList.add('displayNone');
       }
+      container.scrollTo({ top: 0, behavior: 'auto' });
     }
   }
   // Crud methods

@@ -1,5 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import Email from 'src/app/model/email.model';
 import Persona from 'src/app/model/persona.model';
@@ -18,9 +18,9 @@ import Swal from 'sweetalert2'
 })
 export class FooterComponent implements OnInit {
   isLog: Boolean = this.authService.islog();
-
-  persona: Persona = new Persona(0, '', '', '', '', '', '', '', '', '');
-  socialM: SocialM = new SocialM(0, '', '', '', '', '');
+  @Input() persona: any
+  @Input() socialM: any
+  // socialM: SocialM = new SocialM(0, '', '', '', '', '');
 
   contactFormSocialM!: FormGroup;
   contactFormMailer!: FormGroup;
@@ -37,8 +37,6 @@ export class FooterComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.getPersona();
-    this.getSocialM();
     this.contactFormSocialM = this.initFormSocialM();
     this.contactFormMailer = this.initFormMailer();
   }
@@ -90,7 +88,7 @@ export class FooterComponent implements OnInit {
 }
 
   getPersona() {
-    this.getPersonaService.getPersona().subscribe((data) => {
+    this.getPersonaService.getPersona().subscribe((data:Persona) => {
       this.persona = data;
     });
   }

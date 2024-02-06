@@ -1,9 +1,8 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import Persona from 'src/app/model/persona.model';
 import Skills from 'src/app/model/skills.model';
-import SocialM from 'src/app/model/socialM.model';
 import { AuthService } from 'src/app/services/auth-service.service';
 import { PersonaService } from 'src/app/services/persona.service';
 import { SkillsService } from 'src/app/services/skills.service';
@@ -20,14 +19,12 @@ export class AboutMeComponent implements OnInit {
   isLog: Boolean = this.authService.islog();
   defaultProfilePic: String = 'https://iili.io/HuCixdx.png';
 
-  persona: Persona = new Persona(0, '', '', '', '', '', '', '', '', '');
-  phraseArr?: String[];
+  @Input() persona: any
+  @Input() softSkills: any
+  @Input() hardSkills: any
+  @Input() socialM: any
   isMobile: Boolean = false;
-
   skills?: Skills[];
-  socialM?: SocialM;
-  softSkills?: Skills[];
-  hardSkills?: Skills[];
 
   // Forms
   contactFormSkill!: FormGroup;
@@ -39,27 +36,19 @@ export class AboutMeComponent implements OnInit {
     public socialMservice: SocialService,
     private skillService: SkillsService,
     private readonly fb: FormBuilder
-  ) {}
+  ) { }
 
   ngOnInit(): void {
-    this.getSocialM();
-    console.log(this.getSocialM())
-    this.getPersona();
-    this.getSkills();
     this.itIsMobile();
     this.contactFormPersona = this.initFormPersona();
     this.contactFormSkill = this.initFormSkill();
   }
 
-   itIsMobile():void {
-
+  itIsMobile(): void {
     if (window.innerWidth < 658) {
-      this.isMobile =true
-      
-      }
-    
+      this.isMobile = true
+    }
   }
-
   succesAlert(message: String) {
     return Swal.fire({
       title: 'Succes',
@@ -70,7 +59,6 @@ export class AboutMeComponent implements OnInit {
       timer: 2500,
     });
   }
-
   errorAlert(message: String) {
     return Swal.fire({
       title: 'Error',
@@ -81,16 +69,12 @@ export class AboutMeComponent implements OnInit {
       timer: 2500,
     });
   }
-
   // Persona Crud
   public getPersona(): void {
     this.personaService.getPersona().subscribe((data) => {
       this.persona = data;
-
-      // this.phraseArrayMaker(this.persona);
     });
   }
-
   // public phraseArrayMaker(persona: Persona): String[] {
   //   this.persona = persona;
   //   this.phraseArr = [
@@ -100,7 +84,6 @@ export class AboutMeComponent implements OnInit {
   //   ];
   //   return this.phraseArr;
   // }
-
   updatePersona(contactForm: FormGroup) {
     this.personaService.updatePersona(contactForm.value).subscribe({
       next: (response: Persona) => {
@@ -112,7 +95,6 @@ export class AboutMeComponent implements OnInit {
       },
     });
   }
-
   // Skill Crud
   public getSkills(): void {
     this.skillService.getSkills().subscribe((skills) => {
@@ -142,7 +124,7 @@ export class AboutMeComponent implements OnInit {
   public getSocialM(): void {
     this.socialMservice.getSocialM().subscribe((socialM) => {
       this.socialM = socialM[0]
-     
+
     })
   }
 
@@ -174,15 +156,11 @@ export class AboutMeComponent implements OnInit {
       },
     });
   }
-
   // ngFor method
-
   trackByMethod(index: number, el: any): number {
     return el.id;
   }
-
   // formMethod SKills
-
   initFormSkill(): FormGroup {
     return this.fb.group({
       id: [''],

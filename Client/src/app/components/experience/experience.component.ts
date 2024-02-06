@@ -33,12 +33,16 @@ export class ExperienceComponent implements OnInit {
   unfold(): void {
     this.hide = !!!this.hide;
     const container = document.getElementById('exp_container');
+    const expcontainer = document.getElementById('exp-cont');
     if (container) {
       if (this.hide) {
         container.classList.add('overflowScroll');
+        expcontainer?.classList.remove('displayNone');
       } else {
         container.classList.remove('overflowScroll');
+        expcontainer?.classList.add('displayNone');
       }
+      container.scrollTo({ top: 0, behavior: 'auto' });
     }
   }
 

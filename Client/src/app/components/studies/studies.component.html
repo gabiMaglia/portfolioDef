@@ -25,7 +25,7 @@
       </div>
     </div>
     <!-- StudiesCard -->
-    <div class="col-12 studiesBoard" (click)="unfold()">
+    <div id="stu_cont" class="col-12 studiesBoard" (click)="unfold()">
       <article
         *ngFor="let studie of studies; trackBy: trackByMethod"
         class="row mx-1 py-3 d-flex flex-wraprounded-top rounded-bottom bg-none border studies-cont"

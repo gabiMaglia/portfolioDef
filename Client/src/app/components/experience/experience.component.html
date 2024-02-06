@@ -24,11 +24,13 @@
       </div>
     </div>
     <!-- Experience card -->
-    <div class="col-12 experienceBoard" (click)="unfold()">
+    <div    id="exp-cont" class="col-12 experienceBoard" (click)="unfold()">
       <article
+   
         *ngFor="let job of jobs; trackBy: trackByMethod"
-        class="row mx-1 py-3 d-flex flex-wraprounded-top rounded-bottom bg-none border  exp-cont"
+        class="row mx-1 py-3 d-flex flex-wraprounded-top rounded-bottom bg-none border exp-cont"
       >
+
         <div class="col-10 d-flex flex-column justify-content-center data-cont">
           <h3>{{ job.institution_exp }}</h3>
           <h4>{{ job.title_exp }}</h4>
@@ -45,6 +47,7 @@
             alt="{{ job.institution_exp }}"
           />
         </div>
+        
         <div *ngIf="isLog" class="editPannel">
           <button
             (click)="modalEdit.openModal(this.onPatchValue(job))"

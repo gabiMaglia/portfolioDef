@@ -31,7 +31,6 @@ export const getSkills = async ():Promise<DbResponseInterface> => {
     else return { error: false, response: skills }; 
 }
 export const getSocialM = async ():Promise<DbResponseInterface> => {
-    
     const socialM = await SocialMedia.findAll()
     if (socialM.length === 0) return {error:true, response : "No existe ninguna red social"};
     else return { error: false, response: socialM }; 

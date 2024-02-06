@@ -5,6 +5,7 @@
   width: 100%;
   overflow: hidden;
   background-color: var(--white);
+  
 }
 .overflowScroll {
   overflow-y: scroll !important;
@@ -26,7 +27,10 @@ app-edit-pannel {
   gap: 1rem;
   padding-top: 100px;
   padding-bottom: 100px;
+  transition: all 1s ease-in-out;
+
 }
+
 .exp-cont {
   display: flex;
   flex-direction: column;
@@ -80,4 +84,8 @@ app-edit-pannel {
 .editPannel {
   display: flex;
   justify-content: center;
+}
+.displayNone{
+  opacity: 0;
+  visibility: hidden;
 }
