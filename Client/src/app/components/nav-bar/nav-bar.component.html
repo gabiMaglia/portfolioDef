@@ -5,7 +5,7 @@
   <!-- Flag -->
   <div class="container-fluid nav-cont">
     <h3 class="navbar-brand m-0 g-0 banner">
-      {{ persona.name_persona[0] }} {{ persona.surname_persona[0] }}
+      {{ persona?.name_persona[0] }} {{ persona?.surname_persona[0] }}
     </h3>
     <!-- Edit Btn -->
     <div *ngIf="isLog" class="editBtn">
@@ -67,7 +67,7 @@
         <li class="nav-item me-lg-0">
           <a
             class="btn btn-outline-light btn-floating mt-1 mx-1"
-            href="{{ socialM.github }}"
+            href="{{ socialM?.github }}"
             target="_blank"
           >
             <i class="fa-brands fa-github"></i>
@@ -76,7 +76,7 @@
         <li class="nav-item me-lg-0">
           <a
             class="btn btn-outline-light btn-floating mt-1 mx-1"
-            href="{{ socialM.instagram }}"
+            href="{{ socialM?.instagram }}"
             target="_blank"
           >
             <i class="fab fa-instagram"></i>

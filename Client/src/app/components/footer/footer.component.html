@@ -59,16 +59,16 @@
     <section class="mb-4">
       <!-- Facebook -->
       <a
-        *ngIf="socialM.facebook"
+        *ngIf="socialM?.facebook"
         class="btn btn-outline-light btn-floating m-1"
-        href="{{ socialM.facebook }}"
+        href="{{ socialM?.facebook }}"
         target="_blank"
         role="button"
         ><i class="fab fa-facebook-f"></i
       ></a>
       <!-- Google -->
       <a
-        *ngIf="socialM.gmail"
+        *ngIf="socialM?.gmail"
         class="btn btn-outline-light btn-floating m-1"
         href="mailto:{{ socialM.gmail }}?subject=subject"
         role="button"
@@ -77,9 +77,9 @@
 
       <!-- Instagram -->
       <a
-        *ngIf="socialM.instagram"
+        *ngIf="socialM?.instagram"
         class="btn btn-outline-light btn-floating m-1"
-        href="{{ socialM.instagram }}"
+        href="{{ socialM?.instagram }}"
         target="_blank"
         role="button"
         ><i class="fab fa-instagram"></i
@@ -87,9 +87,9 @@
 
       <!-- Linkedin -->
       <a
-        *ngIf="socialM.linkedin"
+        *ngIf="socialM?.linkedin"
         class="btn btn-outline-light btn-floating m-1"
-        href="{{ socialM.linkedin }}"
+        href="{{ socialM?.linkedin }}"
         target="_blank"
         role="button"
         ><i class="fab fa-linkedin-in"></i
@@ -97,17 +97,17 @@
 
       <!-- Github -->
       <a
-        *ngIf="socialM.github"
+        *ngIf="socialM?.github"
         class="btn btn-outline-light btn-floating m-1"
-        href="{{ socialM.github }}"
+        href="{{ socialM?.github }}"
         target="_blank"
         role="button"
         ><i class="fab fa-github"></i
       ></a>
       <a
-        *ngIf="persona.telephone_persona"
+        *ngIf="persona?.telephone_persona"
         class="btn btn-outline-light btn-floating m-1"
-        href="https://wa.me/{{ persona.telephone_persona }}"
+        href="https://wa.me/{{ persona?.telephone_persona }}"
         target="_blank"
         role="button"
         ><i class="fa-brands fa-whatsapp"></i
@@ -131,7 +131,7 @@
   >
     © 2022 Copyright:
     <p class="text-white" target="_blank">
-      {{ persona.name_persona }} {{ persona.surname_persona }}
+      {{ persona?.name_persona }} {{ persona?.surname_persona }}
     </p>
   </div>
   <!-- Copyright -->

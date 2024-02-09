@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
    this.getSkills();
   }
 
-  setTitlePage(){
+  setTitlePage (){
     this.personaService.getPersona().subscribe((data) => {
       this.titleService.setTitle(data.name_persona.toString()+data.surname_persona.toString() + " Personal Page");
     });

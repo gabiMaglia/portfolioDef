@@ -13,8 +13,8 @@ import Swal from 'sweetalert2';
   styleUrls: ['./nav-bar.component.css'],
 })
 export class NavBarComponent implements OnInit {
-  @Input() persona: any
-  @Input() socialM: any
+  @Input() persona?: any
+  @Input() socialM?: any
   contactFormPersona!: FormGroup;
   contactFormCredentials!: FormGroup;
   isLog = this.authService.islog();

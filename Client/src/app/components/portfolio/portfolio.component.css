@@ -1,64 +1,94 @@
 #my-work {
-  background-color: var(--white);
-  min-height: 60rem;
+  background-color: var(--boostrapBlack);
   color: var(--white);
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-inline: center;
-  text-align: center;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
-a {
-  text-align: center;
+#jobs-portada {
+  display: grid;
+  place-content: center;
+  flex: 1;
+  width: 100%;
+  min-height: 40rem;
+  max-height: 40rem;
+  color: white;
+  background-color: var(--boostrapGrey);
 }
-#addBtn{
+.title {
+  text-align: center;
+  color: var(--white);
+}
+#jobs-container {
+  flex: 1;
+  width: 100%;
+  min-height: 40rem;
+  max-height: 40rem;
+  overflow:visible;
+  background-color: var(--white);
+}
+
+#addBtn {
   margin-bottom: 1rem;
   width: 10rem;
   margin-inline: auto;
 }
+#card-container {
 
-.title {
   text-align: center;
-  margin-bottom: 10rem;
-  color: var(--boostrapBlack);
-  top: 50%;
+  color: var(--boostrapGrey);
+}
+.carousel-inner{
+  gap: 12rem;
+  height: 40rem;
+ 
+  
+}
+.carousel-item{
+  height: 100%;
+
+  border: 1px black solid;
+}
+.proyectCont{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+  }
+#imgWrapper {
+  display: flex;
+  border-radius: 18px;
+  /* padding-top: 12rem; */
+}
+.carousel-pic {
+  margin-inline: auto;
+  animation: all 1s  ease-in-out;
+  width: 100%;
+
+   padding: 2rem;
+
+}
+
+#description {
+  padding: 2rem;
+  
+}
+.controls{
+  /* position: absolute!important; */
+}
+.carousel-control-prev,
+.carousel-control-next {
+  background-color: black;
+  width: 2rem;
+  z-index: 9;
 }
 
 
-#work-card {
-  display: grid;
-   color: var(--boostrapGrey);
-   text-align: center;
-   margin-bottom: 10rem;
-  
- }
- #card-container{
-   padding-inline: auto;
- }
- #carousel{
-   max-height: 200px;
-   z-index: -1;
-   width: min(420px, 100%);
- }
- 
- .carousel-pic {
-   width: 100%;
- }
 
- #data-box {
-   display: flex;
-   flex-wrap: wrap;
-   
-   text-align: center;
-   justify-content: center;
-   padding-right: 1rem;
-   padding-left: 1rem;
-   gap: 5rem;
-   
- }
 
- .job-description {
-   margin-inline: auto;
+.job-description {
+  /* margin-inline: auto;
    width: min(0, 90%);
    min-height: 6rem;
    display: grid;
@@ -69,38 +99,29 @@ a {
    background-color: var(--boostrapBlack);
    box-shadow: 0 10px 30px -15px var(--shadow);
    border-radius: var(--borderRadius);
-   z-index: 1;
- }
- 
- .links{
-   background-color: var(--boostrapBlack);
- 
- 
- }
+   z-index: 1; */
+}
 
- .titleDesktop{
-   display: none;
- }  
+.links {
+  background-color: var(--boostrapBlack);
+}
 
- app-edit-pannel{
-   text-align: center;
-   color: black;
-   justify-self: center;
- }
- @media (min-width: 1200px) {
- .titleDesktop{
+app-edit-pannel {
+  text-align: center;
+  color: black;
+  justify-self: center;
+}
+@media (min-width: 1200px) {
+  /* .titleDesktop{
    display: block;
  }  
  .titleMobile{
    display: none;
- }
- }
+ } */
+}
 
- @media (min-width: 1333px){
-   #data-box {
-     text-align: right;
- 
-   }
- }
- 
- 
+@media (min-width: 1333px) {
+  #data-box {
+    /* text-align: right; */
+  }
+}

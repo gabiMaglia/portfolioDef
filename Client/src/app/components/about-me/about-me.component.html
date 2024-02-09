@@ -30,15 +30,15 @@
         <img
           loading="lazy"
           id="profile-pic"
-          [src]="persona.photo_url || defaultProfilePic"
+          [src]="persona?.photo_url || defaultProfilePic"
           alt="Gabriel Alejandro Maglia"
         />
       </div>
       <div id="description">
         <div class="personalData">
           <h4 class="title">
-            I'm {{ this.persona.name_persona }}
-            {{ this.persona.surname_persona }}
+            I'm {{ this.persona?.name_persona }}
+            {{ this.persona?.surname_persona }}
           </h4>
           <p class="title">a 36-year-old enthusiast of music and technology</p>
         </div>
@@ -48,7 +48,7 @@
           <span class="contactIcon">
             <i class="fa-solid fa-phone"></i>
             <i>               
-              {{ this.persona.telephone_persona }}
+              {{ this.persona?.telephone_persona }}
             </i>
           </span>
           <span class="contactIcon">
@@ -63,14 +63,7 @@
               {{ this.socialM?.linkedin }}
             </i>
           </span>
-             
-           
-          <i>
-           
-          </i>
-          <i>
-            
-          </i>
+
         </div>
         <!-- Edit Pannel -->
         <div *ngIf="isLog" class="editPannelImg">

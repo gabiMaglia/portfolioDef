@@ -1,10 +1,14 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
+
 import Proyects from 'src/app/model/proyects.model';
 import { AuthService } from 'src/app/services/auth-service.service';
 import { ProyectsService } from 'src/app/services/proyects.service';
 import Swal from 'sweetalert2';
+import { ImageGalleryModalComponent } from '../image-gallery-modal/image-gallery-modal.component';
 
 @Component({
   selector: 'app-portfolio',
@@ -13,16 +17,17 @@ import Swal from 'sweetalert2';
 })
 export class PortfolioComponent implements OnInit {
   isLog: Boolean = this.authService.islog();
-
   jobs?: Proyects[];
-  img?: String[];
-
+  imgs?: String[];
+  selectedJobImages?: any
+ 
   contactFormJob!: FormGroup;
 
   constructor(
     private proyectService: ProyectsService,
     private authService: AuthService,
-    private readonly fb: FormBuilder
+    private readonly fb: FormBuilder,
+    private modalService: NgbModal
   ) {}
 
   ngOnInit(): void {
@@ -60,9 +65,9 @@ export class PortfolioComponent implements OnInit {
     });
   }
   getCarrouselImg(data: Proyects[]): String[] {
-    this.img = new Array();
-    this.img.push(data[0].img1_pro, data[0].img2_pro, data[0].img3_pro);
-    return this.img;
+    this.imgs = new Array();
+    this.imgs.push(data[0].img1_pro, data[0].img2_pro, data[0].img3_pro);
+    return this.imgs;
   }
 
   public addProyect(contactForm: FormGroup) {
@@ -80,6 +85,12 @@ export class PortfolioComponent implements OnInit {
     } else {
       this.errorAlert('Title and description required');
     }
+  }
+
+  openImageModal(job: any) {
+    this.selectedJobImages = [job.img1_pro, job.img2_pro, job.img3_pro];
+    const modalRef = this.modalService.open(ImageGalleryModalComponent);
+    modalRef.componentInstance.images = this.selectedJobImages;
   }
 
   updateProyect(contactForm: FormGroup) {
