@@ -33,7 +33,12 @@ export class PortfolioComponent implements OnInit {
   ngOnInit(): void {
     this.getProyects();
     this.contactFormJob = this.initFormJob();
+
+    
+    
   }
+
+  
 
   succesAlert(message: String) {
     return Swal.fire({
