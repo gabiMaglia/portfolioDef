@@ -1,6 +1,6 @@
 <footer class="bg-dark text-center text-white">
   <!-- Contact form -->
-  <div id="contact" class="content holder bg-dark text-white">
+  <section id="footer"  class="content holder bg-dark text-white">
     <div class="form">
       <form
         #mailForm="ngForm"
@@ -11,7 +11,7 @@
       >
         <h2>Contact Me</h2>
 
-        <div class="form-group">
+        <div  class="form-group">
           <p>
             <input type="text" formControlName="name" required />
             <label for="nombre">Name</label>
@@ -51,10 +51,10 @@
         </div>
       </form>
     </div>
-  </div>
+  </section>
 
   <!-- SOcialMedia container -->
-  <div class="container-sm p-4 pb-0">
+  <section class="container-sm p-4 pb-0">
     <!-- Section: Social media -->
     <section class="mb-4">
       <!-- Facebook -->
@@ -114,7 +114,7 @@
       ></a>
     </section>
     <!-- Section: Social media -->
-  </div>
+  </section>
   <!-- Edit SocialMedBtn -->
   <div *ngIf="isLog" class="editBtn">
     <button

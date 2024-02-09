@@ -1,12 +1,12 @@
-<app-nav-bar [socialM]="this.socialM" [persona]="this.persona"></app-nav-bar>
 <main
-  data-bs-spy="scroll"
-  data-bs-target="#nav-bar"
-  data-bs-root-margin="0px 0px 0px"
-  data-bs-smooth-scroll="true"
-  class="bg-light rounded-2"
-  tabindex="0"
+data-bs-spy="scroll"
+data-bs-target="#nav-bar"
+data-bs-root-margin="0px 0px 0px"
+data-bs-smooth-scroll="true"
+class="bg-light rounded-2"
+tabindex="0"
 >
+<app-nav-bar [socialM]="this.socialM" [persona]="this.persona"></app-nav-bar>
   <app-about-me
     [socialM]="this.socialM"
     [persona]="this.persona"
@@ -18,5 +18,5 @@
     <app-experience class="box"></app-experience>
   </section>
   <app-portfolio></app-portfolio>
+  <app-footer [socialM]="this.socialM" [persona]="this.persona"></app-footer>
 </main>
-<app-footer [socialM]="this.socialM" [persona]="this.persona"></app-footer>
