@@ -5,8 +5,6 @@ import sequelize from "./src/db/conn";
 const PORT = 3001
 
 
-
-
 sequelize.sync({force:false}).then(()=>{
     server.listen(PORT, ()=> {
         console.log(
