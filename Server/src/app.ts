@@ -4,10 +4,9 @@ import cors from 'cors'
 import morgan from 'morgan'
 
 const server = express()
-server.use(express.static('public'))
+
 server.use(cors())
 server.use (morgan(':method :url :status :res[content-length] - :response-time ms'))
-// const morgan = require('morgan')
 server.use(express.json())
 
 
