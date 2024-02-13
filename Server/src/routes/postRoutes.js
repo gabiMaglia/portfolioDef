@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var express_1 = require("express");
+var postHandlers_1 = require("../handlers/postHandlers");
+var postRouter = (0, express_1.Router)();
+postRouter.post("/persona", postHandlers_1.postUserHandler);
+postRouter.post("/proyect", postHandlers_1.postProyectsHandler);
+postRouter.post("/experience", postHandlers_1.postExperienceHandler);
+postRouter.post("/skill", postHandlers_1.postSkillsHandler);
+postRouter.post("/social", postHandlers_1.postSocialHandler);
+postRouter.post("/studies", postHandlers_1.postStudiesHandler);
+exports.default = postRouter;

@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/index.ts",
+    "start": "vercel dev",
+    "deploy": "vercel deploy --prod",
     "build": "rimraf dist && tsc",
     "ts.check": "tsc --project tsconfig.json",
     "add-build": "git add dist",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "vercel-build": "echo hello"
   },
   "keywords": [],
   "author": "",
@@ -38,7 +40,8 @@
     "pre-commit": "^1.2.2",
     "rimraf": "^5.0.5",
     "sequelize-typescript": "^2.1.6",
-    "ts-node": "^10.9.2"
+    "ts-node": "^10.9.2",
+    "vercel": "^33.5.0"
   },
   "eslintConfig": {
     "extends": "standard"
@@ -47,5 +50,5 @@
     "ts.check",
     "build",
     "add-build"
-]
+  ]
 }

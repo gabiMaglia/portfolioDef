@@ -1,5 +1,4 @@
-import dotenv from 'dotenv'; 
-dotenv.config();
+
 import server from "./src/app";
 import sequelize from "./src/db/conn";
 const PORT = 3001
@@ -12,3 +11,5 @@ sequelize.sync({force:false}).then(()=>{
         )
     })
 })
+
+export default server
