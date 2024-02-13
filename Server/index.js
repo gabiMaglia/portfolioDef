@@ -1,28 +1,30 @@
-const express = require ("express");
-const cors = require ("cors");
-const morgan = require ("morgan");
-const sequelize = require ("./src/db/conn.js");
-const mainRouter = require ("./src/routes/mainRoutes.js");
+//                       _oo0oo_
+//                      o8888888o
+//                      88" . "88
+//                      (| -_- |)
+//                      0\  =  /0
+//                    ___/`---'\___
+//                  .' \\|     |// '.
+//                 / \\|||  :  |||// \
+//                / _||||| -:- |||||- \
+//               |   | \\\  -  /// |   |
+//               | \_|  ''\---/''  |_/ |
+//               \  .-\__  '-'  ___/-. /
+//             ___'. .'  /--.--\  `. .'___
+//          ."" '<  `.___\_<|>_/___.' >' "".
+//         | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+//         \  \ `_.   \_ __\ /__ _/   .-` /  /
+//     =====`-.____`.___ \_____/___.-`___.-'=====
+//                       `=---='
+//     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+const app = require("./src/app.js");
+const { conn } = require("./src/db.js");
 const PORT = 3001;
-const app = express();
 
-app.use(cors());
-app.use(
-  morgan(":method :url :status :res[content-length] - :response-time ms")
-);
-app.use(express.json());
-
-// get post routes
-app.use("/", mainRouter);
-
-// root routes
-
-sequelize.sync({ alter: true }).then(() => {
+conn.sync({ alter: false }).then(() => {
   app.listen(PORT, () => {
     console.log(
-      `Server listening at ${PORT}, running on ${"DEV"}_DB enviroment`
-    );
+      `Server listening at ${PORT}, running on ${process.env.NODE_ENV.toUpperCase()}_DB enviroment`
+    ); // eslint-disable-line no-console
   });
 });
-
-module.exports = app;
