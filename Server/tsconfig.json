@@ -2,7 +2,7 @@
   "compilerOptions": {
     "outDir": "dist",
     "target": "ESNext",
-    "module": "ESNext",
+    "module": "ES2015",
     "esModuleInterop": true
   }
 }
