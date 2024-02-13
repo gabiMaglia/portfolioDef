@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "node index.ts",
-    "start": "ts-node ./index.ts"
+    "build": "tsc",
+    "start": "node public/index.js"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
