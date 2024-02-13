@@ -1,27 +1,8 @@
 {
   "compilerOptions": {
-    "target": "ES2016",
-    "module": "commonjs",
-    "lib": [
-      "es5",
-      "dom"
-    ],
-    "outDir": "./build",
-    "rootDir": "./",
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "strictNullChecks": true,
-    "noImplicitReturns": true,
-    "noImplicitAny": true,
-    "noImplicitThis": true,
-    "alwaysStrict": true,
-    "downlevelIteration": true,
-    "baseUrl": "./",
-    "paths": {
-      "@/*": [
-        "./src/*"
-      ],
-    }
-  },
-  "include": ["./api/*.ts"] // -> this is the line you need to update
+    "outDir": "dist",
+    "target": "ESNext",
+    "module": "CommonJS",
+    "esModuleInterop": true
+  }
 }

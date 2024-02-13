@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 dotenv.config();
 
-import { Sequelize } from "sequelize-typescript";
+import { Sequelize } from "sequelize";
 
 import UserModel from "../models/User";
 import UserCredentialsModel from "../models/UserCredentials";
@@ -80,6 +80,7 @@ User.hasMany(SocialMedia, {
   onDelete: "CASCADE",
 });
 SocialMedia.belongsTo(User);
+
 
 
 export default sequelize;
