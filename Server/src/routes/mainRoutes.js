@@ -15,4 +15,4 @@ mainRouter.use('/add', postRouter)
 mainRouter.use('/edit', updateRouter)
 mainRouter.use('/delete', deleteRouter)
 
-module.exports =  mainRouter
+module.exports =  {mainRouter}

@@ -1,7 +1,7 @@
 const express = require ("express");
 const cors = require ("cors");
 const morgan = require ("morgan");
-const mainRouter = require ("./routes/mainRoutes.js");
+const {mainRouter} = require ("./routes/mainRoutes.js");
 const app = express();
 app.name = "API";
 app.use(cors());
