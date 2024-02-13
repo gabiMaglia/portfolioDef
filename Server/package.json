@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "start": "dev",
+    "start": "nodemon ./index.ts",
     "deploy": "vercel deploy --prod",
-    "build": "rimraf build && tsc",
+    "build": " tsc",
     "ts.check": "tsc --project tsconfig.json",
     "add-build": "git add dist",
     "test": "echo \"Error: no test specified\" && exit 1",
