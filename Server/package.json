@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
- 
   "scripts": {
     "test": "jest",
     "test:cover": "jest --coverage",
@@ -43,7 +42,6 @@
     "mock-express-response": "^0.3.0",
     "morgan": "^1.10.0",
     "mysql2": "^3.9.1",
-    "nodemailer": "^6.9.9",
     "nodemon": "^3.0.3",
     "os": "^0.1.2",
     "pg": "^8.11.3",
