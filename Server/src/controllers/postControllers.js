@@ -1,5 +1,3 @@
-const sequelize = require("../db/conn.js");
-
 const {
   User,
   UserCredentials,
@@ -9,7 +7,7 @@ const {
   Skills,
   SocialMedia,
   Studies,
-} = sequelize.models;
+} = require('../db/conn.js')
 
 const postPersona = async (persona) => {
   const newUser = await User.create({
