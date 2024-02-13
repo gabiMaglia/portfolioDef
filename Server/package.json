@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "start": "nodemon ./index.ts",
+    "start": "ts-node ./index.ts",
     "deploy": "vercel deploy --prod",
     "build": " tsc",
     "ts.check": "tsc --project tsconfig.json",
-    "add-build": "git add dist",
+    "add-build": "git add build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "vercel-build": "echo hello"
   },

@@ -3,17 +3,18 @@ import mainRouter from './routes/mainRoutes'
 import cors from 'cors'
 import morgan from 'morgan'
 
-const server = express()
 
-server.use(cors())
-server.use (morgan(':method :url :status :res[content-length] - :response-time ms'))
-server.use(express.json())
+const app = express()
 
-
-server.use('/', mainRouter)
+app.use(cors())
+app.use (morgan(':method :url :status :res[content-length] - :response-time ms'))
+app.use(express.json())
 
 
-server.use((err:any, _req:any, res:any, _next:any) => {
+app.use('/', mainRouter)
+
+
+app.use((err:any, _req:any, res:any, _next:any) => {
     const status = err.status || 500;
     const message = err.message || err;
     console.error(err);
@@ -21,4 +22,4 @@ server.use((err:any, _req:any, res:any, _next:any) => {
   });
 
 
-export default server
+export default app
