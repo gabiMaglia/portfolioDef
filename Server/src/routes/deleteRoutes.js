@@ -1,4 +1,4 @@
-import { Router } from "express"
+const { Router } =  require ("express")
 
 const deleteRouter = Router()
 
@@ -6,5 +6,4 @@ const deleteRouter = Router()
 
 
 
-
-export default deleteRouter
+module.exports = {deleteRouter}

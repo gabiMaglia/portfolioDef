@@ -1,4 +1,4 @@
-import { Router } from "express"
+const { Router } =  require ("express")
 
 const updateRouter = Router()
 
@@ -6,5 +6,4 @@ const updateRouter = Router()
 
 
 
-
-export default updateRouter
+module.exports = {updateRouter}

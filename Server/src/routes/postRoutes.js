@@ -1,13 +1,13 @@
-import { Router } from "express";
+const { Router } =  require ("express")
 
-import {
+const {
   postUserHandler,
   postProyectsHandler,
   postExperienceHandler,
   postSkillsHandler,
   postSocialHandler,
   postStudiesHandler,
-} from "../handlers/postHandlers.js";
+} = require ("../handlers/postHandlers.js");
 
 const postRouter = Router();
 
@@ -18,4 +18,4 @@ postRouter.post("/skill", postSkillsHandler);
 postRouter.post("/social", postSocialHandler);
 postRouter.post("/studies", postStudiesHandler);
 
-export default postRouter;
+module.exports = {postRouter};

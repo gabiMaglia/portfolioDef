@@ -1,16 +1,16 @@
-import dotenv from 'dotenv';
+const dotenv = require ('dotenv');
 dotenv.config();
 
-import { Sequelize } from "sequelize";
+const { Sequelize } = require ("sequelize");
 
-import UserModel from "../models/User.js";
-import UserCredentialsModel from "../models/UserCredentials.js";
-import UserPhrasesModel from "../models/UserPhrases.js";
-import ExperienceModel from "../models/Experience.js";
-import SocialModel from "../models/Social.js";
-import SkillModel from '../models/Skills.js'
-import StudiesModel from "../models/Studies.js";
-import ProyectModel from '../models/Proyect.js'
+const UserModel = require ("../models/User.js");
+const UserCredentialsModel = require ("../models/UserCredentials.js");
+const UserPhrasesModel = require ("../models/UserPhrases.js");
+const ExperienceModel = require ("../models/Experience.js");
+const SocialModel = require ("../models/Social.js");
+const SkillModel = require ('../models/Skills.js')
+const StudiesModel = require ("../models/Studies.js");
+const ProyectModel = require ('../models/Proyect.js')
 
 const LOCAL_DB = process.env.LOCAL_DB
 
@@ -83,4 +83,4 @@ SocialMedia.belongsTo(User);
 
 
 
-export default sequelize;
+module.exports = sequelize;

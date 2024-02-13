@@ -1,5 +1,5 @@
 
-import { getPersona, getProyects, getExperiences, getSkills, getSocialM, getStudies } from "../controllers/getControllers.js";
+const { getPersona, getProyects, getExperiences, getSkills, getSocialM, getStudies } = require ("../controllers/getControllers.js");
 
 
 const getUserHandler = async (_req, res) => {
@@ -89,4 +89,4 @@ const getStudiesHandler = async (_req, res) => {
 
 };
 
-export { getUserHandler, getProyectsHandler, getExperienceHandler, getSkillsHandler, getSocialHandler, getStudiesHandler };
+module.exports = { getUserHandler, getProyectsHandler, getExperienceHandler, getSkillsHandler, getSocialHandler, getStudiesHandler };

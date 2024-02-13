@@ -1,5 +1,5 @@
-import nodemailer from 'nodemailer'
-import dotenv from 'dotenv'; 
+const nodemailer = require ('nodemailer')
+const dotenv = require ('dotenv') 
 dotenv.config();
 
 const username = process.env.NODEMAILER_USER
@@ -16,7 +16,7 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-export const sendMail = async (name, surname, email, message) => {
+const sendMail = async (name, surname, email, message) => {
     console.log(message)
     const info = await transporter.sendMail({
         from: email, 
@@ -28,3 +28,5 @@ export const sendMail = async (name, surname, email, message) => {
 
       return info ? info.messageId : {error: true};
 }
+
+module.exports = { sendMail }

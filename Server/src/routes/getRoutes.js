@@ -1,5 +1,5 @@
-import { Router } from "express"
-import { getUserHandler, getProyectsHandler, getExperienceHandler, getSkillsHandler, getSocialHandler, getStudiesHandler } from "../handlers/getHandlers.js"
+const { Router } =  require ("express")
+const { getUserHandler, getProyectsHandler, getExperienceHandler, getSkillsHandler, getSocialHandler, getStudiesHandler } = require ("../handlers/getHandlers.js")
 
 
 const getRouter = Router()
@@ -14,4 +14,4 @@ getRouter.get('/studies', getStudiesHandler)
 
 
 
-export default getRouter
+module.exports = {getRouter}

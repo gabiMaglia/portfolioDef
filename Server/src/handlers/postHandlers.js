@@ -1,5 +1,5 @@
 
-import { postPersona, postProyect, postExperience, postSkill, postSocialM, postStudie } from "../controllers/postControllers.js";
+const { postPersona, postProyect, postExperience, postSkill, postSocialM, postStudie } = require ("../controllers/postControllers.js");
 
 
 
@@ -180,4 +180,4 @@ const postStudiesHandler = async (req, res) => {
 
 };
 
-export { postUserHandler, postProyectsHandler, postExperienceHandler, postSkillsHandler, postSocialHandler, postStudiesHandler };
+module.exports = { postUserHandler, postProyectsHandler, postExperienceHandler, postSkillsHandler, postSocialHandler, postStudiesHandler };

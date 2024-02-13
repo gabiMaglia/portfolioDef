@@ -1,5 +1,5 @@
 
-import { sendEmailController } from "../controllers/senEmailController.js";
+const { sendEmailController } = require ("../controllers/senEmailController.js");
 
  const sendEmailHandler = async (req, res) => {
      try {
@@ -19,4 +19,4 @@ import { sendEmailController } from "../controllers/senEmailController.js";
     }
 }
 
-export {sendEmailHandler}
+module.exports = {sendEmailHandler}
