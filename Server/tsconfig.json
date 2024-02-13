@@ -7,6 +7,6 @@
       "outDir": "build",
       "strict": true
     },
-    "include": ["./api/*.ts"] // -> this is the line you need to update
+    "include": ["./api/index.ts"] // -> this is the line you need to update
   }
   
