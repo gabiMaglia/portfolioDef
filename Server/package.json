@@ -1,40 +1,24 @@
 {
-  "name": "api",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "server",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "start": "node ./index.js",
-    "dev": "nodemon -L"
-  },
-  "author": "Gabi",
-  "license": "ISC",
-  "engines": {
-    "node": ">=12.18.3",
-    "npm": ">=6.14.6"
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www"
   },
   "dependencies": {
-    "axios": "^1.6.7",
+    "cookie-parser": "~1.4.6",
     "cors": "^2.8.5",
-    "debug": "^4.3.4",
-    "dotenv": "^16.4.4",
-    "express": "^4.18.2",
-
-    "morgan": "^1.10.0",
-    "nodemailer": "^6.9.9",
+    "debug": "~4.3.4",
+    "express": "~4.18.2",
+    "http-errors": "~2.0.0",
+    "jade": "~1.11.0",
+    "morgan": "~1.10.0",
     "pg": "^8.11.3",
     "pg-hstore": "^2.3.4",
-    "pluralize": "^8.0.0",
-    "sequelize": "^6.37.0",
-    "socket.io": "^4.7.4",
-    "uuid": "^9.0.1",
-    "webpack": "^5.90.1"
+    "sequelize": "^6.37.0"
   },
   "devDependencies": {
-    "jest": "^29.7.0",
-    "nodemon": "^3.0.3",
-    "sequelize-test-helpers": "^1.4.3",
-    "supertest": "^6.3.4",
-    "supertest-session": "^5.0.1"
+    "nodemon": "^3.0.3"
   }
 }
