@@ -1,7 +1,8 @@
 const express = require ("express");
 const cors = require ("cors");
 const morgan = require ("morgan");
-const {mainRouter} = require ("./routes/mainRoutes.js");
+const mainRouter = require ("./routes/mainRoutes.js");
+
 const app = express();
 app.name = "API";
 app.use(cors());
@@ -11,7 +12,7 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// get post routes
+
 app.use("/", mainRouter);
 
 // root routes
