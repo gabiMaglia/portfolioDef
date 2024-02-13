@@ -1,4 +1,4 @@
-const sequelize = require ('../db/conn.js')
+
 const { User, UserPhrases, Proyect, Experience, Skills, SocialMedia, Studies } = require('../db/conn.js')
 
 
