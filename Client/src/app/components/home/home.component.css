@@ -14,3 +14,10 @@
     flex-wrap: wrap;
   }
 }
+
+.spinner{
+  height: 100svh;
+  width: 100svw;
+  display: grid;
+  place-content: center;
+}

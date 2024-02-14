@@ -14,11 +14,14 @@ import { SocialService } from 'src/app/services/social.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  persona?: Persona 
+  persona?: Persona;
   socialM?: SocialM;
   skills?: Skills[];
   softSkills?: Skills[];
   hardSkills?: Skills[];
+  loading: boolean = true;
+  requestsCompleted: number = 0;
+  totalRequests: number = 3; // Número total de llamadas de servicio
 
   constructor(
     private personaService: PersonaService,
@@ -28,39 +31,54 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-   this.setTitlePage();
-   this.getSocialM();
-   this.getPersona();
-   this.getSkills();
+    this.setTitlePage();
+    this.loadData();
   }
 
-  setTitlePage (){
+  setTitlePage() {
     this.personaService.getPersona().subscribe((data) => {
-      this.titleService.setTitle(data.name_persona.toString()+data.surname_persona.toString() + " Personal Page");
+      this.titleService.setTitle(data.name_persona.toString() + data.surname_persona.toString() + " Personal Page");
     });
+  }
+
+  loadData() {
+    // Reiniciar el estado de carga
+    this.loading = true;
+    this.requestsCompleted = 0;
+
+    // Realizar todas las llamadas a los servicios necesarios
+    this.getPersona();
+    this.getSkills();
+    this.getSocialM();
   }
 
   public getPersona(): void {
     this.personaService.getPersona().subscribe((data) => {
       this.persona = data;
-
-      // this.phraseArrayMaker(this.persona);
+      this.handleRequestComplete();
     });
   }
+
   public getSkills(): void {
     this.skillService.getSkills().subscribe((skills) => {
       this.skills = skills;
       this.softSkills = skills.filter((data) => data.type === 'soft');
       this.hardSkills = skills.filter((data) => data.type == 'hard');
+      this.handleRequestComplete();
     });
   }
+
   public getSocialM(): void {
     this.socialMservice.getSocialM().subscribe((socialM) => {
-      this.socialM = socialM[0]
-    })
+      this.socialM = socialM[0];
+      this.handleRequestComplete();
+    });
   }
 
-
-
-      
+  handleRequestComplete() {
+    this.requestsCompleted++;
+    if (this.requestsCompleted === this.totalRequests) {
+      this.loading = false; // Cambiar a false una vez que todas las solicitudes hayan terminado
+    }
+  }
 }

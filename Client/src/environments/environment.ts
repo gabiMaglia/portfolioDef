@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   // server  : 'https://portfolio-backend-t3tl2jwafq-uc.a.run.app'
-  server  : 'https://portfolio-def-pob7.vercel.app'
+  server  : 'https://rickmortyapp-gwen-gabimaglia.koyeb.app'
   // server  : 'http://localhost:3001'
 };
 

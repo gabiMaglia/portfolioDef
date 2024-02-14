@@ -1,22 +1,29 @@
-<main
-data-bs-spy="scroll"
-data-bs-target="#nav-bar"
-data-bs-root-margin="0px 0px 0px"
-data-bs-smooth-scroll="true"
-class="bg-light rounded-2"
-tabindex="0"
->
-<app-nav-bar [socialM]="this.socialM" [persona]="this.persona"></app-nav-bar>
-  <app-about-me
-    [socialM]="this.socialM"
-    [persona]="this.persona"
-    [softSkills]="this.softSkills"
-    [hardSkills]="this.hardSkills"
-  ></app-about-me>
-  <section id="expStu">
-    <app-studies class="box"></app-studies>
-    <app-experience class="box"></app-experience>
-  </section>
-  <app-portfolio></app-portfolio>
-  <app-footer [socialM]="this.socialM" [persona]="this.persona"></app-footer>
-</main>
+<span *ngIf="loading" class="spinner">
+  <div class="spinner-border" role="status"></div>
+</span>
+
+  <main
+  *ngIf="!loading" 
+    data-bs-spy="scroll"
+    data-bs-target="#nav-bar"
+    data-bs-root-margin="0px 0px 0px"
+    data-bs-smooth-scroll="true"
+    class="bg-light rounded-2"
+    tabindex="0"
+  >
+    <app-nav-bar [socialM]="socialM" [persona]="persona"></app-nav-bar>
+    <app-about-me
+      id='about-me'
+      [socialM]="socialM"
+      [persona]="persona"
+      [softSkills]="softSkills"
+      [hardSkills]="hardSkills"
+    ></app-about-me>
+    <section id="expStu">
+      <app-studies class="box"></app-studies>
+      <app-experience class="box"></app-experience>
+    </section>
+    <app-portfolio id="my-work"></app-portfolio>
+    <app-footer id="footer" [socialM]="socialM" [persona]="persona"></app-footer>
+  </main>
+
