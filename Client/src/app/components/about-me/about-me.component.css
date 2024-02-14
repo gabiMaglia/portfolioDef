@@ -19,6 +19,24 @@
   .title{
     display: block;
     font-size: 32px;
+    font-weight: 800!important;
+    padding-top: 2rem ;
+  }
+  .maindesc::before{
+    content: '.';
+    padding-right: 2px;
+    animation: dot-animation 1s infinite;
+  }
+  @keyframes dot-animation {
+    0% {
+      opacity: 0; /* El punto está completamente transparente al principio */
+    }
+    50% {
+      opacity: 1; /* El punto es completamente visible en la mitad de la animación */
+    }
+    100% {
+      opacity: 0; /* El punto vuelve a ser completamente transparente al final */
+    }
   }
   #about-container .white-column {
     display: flex;
@@ -31,10 +49,11 @@
 
   }
   #about-container .black-column {
-    height: 21.5rem;
+    height: 26.5rem;
     background-color: var(--boostrapGrey);
     color: white;
     display: flex;
+  
     flex-direction: column;
   }
     
@@ -62,6 +81,7 @@
     display: grid;
     grid-template-rows: 1fr;
     justify-content: center;
+ 
     text-align: center;
     position: relative;
     margin-top: -3rem!important;
@@ -101,6 +121,7 @@
   #skills-container .black-column{
     background-color: var(--boostrapGrey);
     color: white;
+   
   }
   
   #skills-container .white-column{
@@ -122,8 +143,8 @@
     display: grid;
     grid-template-columns: 1fr 1fr ;
     text-align: center;
-    box-shadow: 0 10px 30px -15px var(--shadow);
-    
+ 
+    transform: scale(.9);
   }
   
   .hex,.img-lang {
@@ -161,11 +182,12 @@
   }
   
   #languages-box {
-    box-shadow: 0 10px 30px -15px var(--shadow);
+    /* box-shadow: 0 10px 30px -15px var(--shadow); */
     padding: 30px 20px 10px 20px ;
     display: grid;
     grid-template-columns: 1fr 1fr ;
     text-align: center;
+    transform: scale(.9);
   }
   
   #languages-box .img-lang {
@@ -177,6 +199,10 @@
   @media (min-width: 991px) {
     .title{
       font-size: 38px;
+
+    }
+    #about-container .black-column {
+        justify-content: center;
     }
     #about-container .white-column{
         min-height: 80%;

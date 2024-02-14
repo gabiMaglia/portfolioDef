@@ -27,6 +27,7 @@ app-edit-pannel {
   padding-top: 100px;
   padding-bottom: 100px;
   transition: all 1s ease-in-out;
+
   
 }
 
@@ -38,6 +39,8 @@ app-edit-pannel {
   box-shadow: 0 10px 30px -15px var(--shadow);
   background-color: var(--boostrapGrey);
   color: var(--white);
+  /* padding: 3rem; */
+  margin-bottom: 7rem;
 }
 .img-job-cont {
   width: min(object-fit, 100%);
@@ -53,6 +56,7 @@ app-edit-pannel {
 
 .data-cont {
   text-align: center;
+  
 }
 
 .description {
