@@ -1,3 +1,6 @@
+main {
+  background-color: white!important;
+}
 #expStu {
   display: flex;
   flex-direction: column;
