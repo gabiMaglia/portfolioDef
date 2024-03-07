@@ -39,6 +39,7 @@ export class AboutMeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    
     this.itIsMobile();
     this.contactFormPersona = this.initFormPersona();
     this.contactFormSkill = this.initFormSkill();
@@ -75,15 +76,6 @@ export class AboutMeComponent implements OnInit {
       this.persona = data;
     });
   }
-  // public phraseArrayMaker(persona: Persona): String[] {
-  //   this.persona = persona;
-  //   this.phraseArr = [
-  //     this.persona.phrase1,
-  //     this.persona.phrase2,
-  //     this.persona.phrase3,
-  //   ];
-  //   return this.phraseArr;
-  // }
   updatePersona(contactForm: FormGroup) {
     this.personaService.updatePersona(contactForm.value).subscribe({
       next: (response: Persona) => {

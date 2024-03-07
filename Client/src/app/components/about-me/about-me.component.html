@@ -49,21 +49,21 @@
         <div class="lDescription">
           <span class="contactIcon">
             <i class="fa-solid fa-phone"></i>
-            <i>               
+            <a href="https://wa.me/5493417207863">               
               {{ this.persona?.telephone_persona }}
-            </i>
+            </a>
           </span>
           <span class="contactIcon">
-            <i class="fa-brands fa-instagram"></i>
-            <i>               
-              {{ this.socialM?.instagram }}
-            </i>
+            <i class="fa-brands fa-git"></i>
+            <a href='https://github.com/gabiMaglia'>               
+              github.com/gabiMaglia
+            </a>
           </span>
           <span class="contactIcon">
             <i class="fa-brands fa-linkedin"></i>
-            <i>               
-              {{ this.socialM?.linkedin }}
-            </i>
+            <a href="https://www.linkedin.com/in/gabrielmaglia/">               
+              {{ (this.socialM?.linkedin ).slice(12)}}
+            </a>
           </span>
 
         </div>
