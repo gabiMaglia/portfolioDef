@@ -8,15 +8,19 @@ const getUserHandler = async (_req, res) => {
     if (responseData.error) res.status(200).send(responseData);
     else{ 
       const {response} = responseData
-      const transformedData = {
-        id: response.id,
-        name_persona: response.name_persona,
-        surname_persona: response.surname_persona,
-        dni_persona: response.dni_persona,
-        telephone_persona: response.telephone_persona,
-        photo_url: response.photo_url,
-      };
     
+      const transformedData = {
+        id: response.persona.id,
+        name_persona: response.persona.name_persona,
+        surname_persona: response.persona.surname_persona,
+        dni_persona: response.persona.dni_persona,
+        telephone_persona: response.persona.telephone_persona,
+        photo_url: response.persona.photo_url,
+        main_phrase: response.phrases.main_phrase,
+        phrase1 : response.phrases.phrase1
+      };
+      
+      
       res.status(200).json(transformedData);
     }
   } catch (error) {

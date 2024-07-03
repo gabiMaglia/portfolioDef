@@ -1,13 +1,12 @@
 
-const { User, Proyect, Experience, Skills, SocialMedia, Studies } = require('../db/conn')
-
-
+const { User, UserPhrases, Proyect, Experience, Skills, SocialMedia, Studies } = require('../db/conn');
 
  const getPersona = async () => {
-
-    const persona = await User.findOne()
+     const persona = await User.findOne()
+     const phrases = await UserPhrases.findOne()
+    
     if (persona?.length === 0) return {error:true, response : "No existe ningun usuario"};
-    else return { error: false, response: persona};
+    else return { error: false, response: {persona, phrases} };
 
 }
  const getProyects = async () => {
