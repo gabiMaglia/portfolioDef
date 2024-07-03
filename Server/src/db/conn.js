@@ -14,7 +14,7 @@ const ProyectModel = require ('../models/Proyect.js')
 const LOCAL_DB = process.env.LOCAL_DB
 
 const sequelize = new Sequelize(
-  LOCAL_DB || 'postgres://postgres:H4nS3l@localhost/portfolio_db',
+  LOCAL_DB || "postgresql://postgres.jnhpgisowuwrbzqxqpcl:hYqW73@@T3Wq$QP@aws-0-us-west-1.pooler.supabase.com:6543/postgres?pgbouncer=true",
   {
     dialect: "postgres",
     dialectOptions: {

@@ -76,10 +76,9 @@ const postSkill = async (skill) => {
 };
 const postSocialM = async (socialMedia) => {
   const newSocialM = await SocialMedia.create({
-    instagram: socialMedia.instagram,
-    facebook: socialMedia.facebook,
-    linkedin: socialMedia.linkedin,
-    github: socialMedia.github,
+    name: socialMedia.name,
+    img: socialMedia.img,
+    url: socialMedia.url,
   });
   if (!newSocialM)
     return { error: true, response: "No se creo el social chart" };

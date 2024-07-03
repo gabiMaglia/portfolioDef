@@ -10,23 +10,15 @@ module.exports = (sequelize ) => {
         allowNull: false,
         primaryKey: true,
       },
-      instagram: {
+      name: {
         type: DataTypes.STRING,
         allowNull: true,
       },
-      facebook: {
+      img: {
         type: DataTypes.STRING,
         allowNull: true,
       },
-      linkedin: {
-        type: DataTypes.STRING,
-        allowNull: true,
-      },
-      github: {
-        type: DataTypes.STRING,
-        allowNull: true,
-      },
-      gmail: {
+      url: {
         type: DataTypes.STRING,
         allowNull: true,
       }
