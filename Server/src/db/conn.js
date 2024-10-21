@@ -12,14 +12,15 @@ const StudiesModel = require ("../models/Studies.js");
 const ProyectModel = require ('../models/Proyect.js')
 
 const LOCAL_DB = process.env.LOCAL_DB;
+const NODE_ENV = process.env.NODE_ENV;
 
-const isLocal = LOCAL_DB && LOCAL_DB.includes('localhost');
+const isLocal = NODE_ENV === "dev";
 
 const sequelize = new Sequelize(
   LOCAL_DB,
   {
     dialect: "postgres",
-    dialectOptions: isLocal ? {} : {
+    dialectOptions: !isLocal ? {} : {
       ssl: {
         require: true,
         rejectUnauthorized: false
