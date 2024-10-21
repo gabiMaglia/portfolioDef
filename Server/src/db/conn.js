@@ -11,21 +11,23 @@ const SkillModel = require ('../models/Skills.js')
 const StudiesModel = require ("../models/Studies.js");
 const ProyectModel = require ('../models/Proyect.js')
 
-const LOCAL_DB = process.env.LOCAL_DB
+const LOCAL_DB = process.env.LOCAL_DB;
+
+const isLocal = LOCAL_DB && LOCAL_DB.includes('localhost');
 
 const sequelize = new Sequelize(
-  LOCAL_DB || "postgresql://postgres.jnhpgisowuwrbzqxqpcl:hYqW73@@T3Wq$QP@aws-0-us-west-1.pooler.supabase.com:6543/postgres?pgbouncer=true",
+  LOCAL_DB,
   {
     dialect: "postgres",
-    dialectOptions: {
+    dialectOptions: isLocal ? {} : {
       ssl: {
         require: true,
         rejectUnauthorized: false
       },
     },
     logging: false,
-  });
-
+  }
+);
 UserModel(sequelize)
 UserCredentialsModel(sequelize)
 UserPhrasesModel(sequelize)
@@ -83,6 +85,6 @@ SocialMedia.belongsTo(User);
 
 
 module.exports = {
-  ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
-  conn: sequelize, // para importart la conexión { conn } = require('./db.js');
+  ...sequelize.models, 
+  conn: sequelize, 
 };
